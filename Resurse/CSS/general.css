@@ -1,0 +1,473 @@
+/* ==========================================================================
+   1. VARIABILE & SETĂRI DE BAZĂ
+   ========================================================================== */
+:root {
+  --culoare-principala: #F5F5F7;
+  --culoare-secundara: #1E2233;
+  --culoare-text: #2D2D2D;
+  --culoare-border: #D1D1D6;
+  --culoare-highlight: #FF4C4C;
+  --padding-zone: 2%;
+  --spatiere-laterala: 5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--culoare-principala);
+  color: var(--culoare-text);
+  line-height: 1.6;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+/* ==========================================================================
+     2. LAYOUT PRINCIPAL & GRID
+     ========================================================================== */
+.container {
+  display: grid;
+  width: calc(100%-2*var(--spatiere-laterala));
+  margin-left: var(--spatiere-laterala);
+  margin-right: var(--spatiere-laterala);
+  grid-template-areas:
+    "header header header header"
+    "zona1 zona1 zona1 zona1"
+    "zona8 zona8 zona8 zona8"
+    "zona3 zona2 zona2 zona4"
+    "zona5 zona6 zona7 zona7"
+    "footer footer footer footer";
+  grid-template-columns: 25% 25% 25% 25%;
+  gap: 1%;
+}
+
+/* ==========================================================================
+     3. ZONE PRINCIPALE DE CONȚINUT
+     ========================================================================== */
+header {
+  grid-area: header;
+  background-color: var(--culoare-secundara);
+  color: white;
+  padding: var(--padding-zone);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  grid-area: main;
+  padding: var(--padding-zone);
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--culoare-secundara);
+  color: white;
+  padding: var(--padding-zone);
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+     4. STILIZARE ZONE INDIVIDUALE
+     ========================================================================== */
+/* Stiluri comune pentru zone */
+#zona1,
+#zona2,
+#zona3,
+#zona4,
+#zona5,
+#zona6,
+#zona7,
+#zona8 {
+  padding: var(--padding-zone);
+  background-color: white;
+  border: 1px solid var(--culoare-border);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Zona 1 - Prezentare magazin */
+#zona1 {
+  grid-area: zona1;
+}
+
+/* Zona 2 - Produse populare */
+#zona2 {
+  grid-area: zona2;
+  grid-column: span 2;
+}
+
+/* Zona 3 - Evenimente viitoare */
+#zona3 {
+  grid-area: zona3;
+}
+
+/* Zona 4 - Anunțuri recente */
+#zona4 {
+  grid-area: zona4;
+}
+
+/* Zona 5 - Utilizatori online */
+#zona5 {
+  grid-area: zona5;
+}
+
+/* Zona 6 - Statistici cont */
+#zona6 {
+  grid-area: zona6;
+}
+
+/* Zona 7 - Informații site */
+#zona7 {
+  grid-area: zona7;
+  grid-column: span 2;
+}
+
+/* Zona 8 - Conținut divers */
+#zona8 {
+  grid-area: zona8;
+}
+
+/* ==========================================================================
+     6. LINK-TOP
+     ========================================================================== */
+a {
+  color: var(--culoare-highlight);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Link înapoi sus */
+#link-top {
+  position: fixed;
+  bottom: 2%;
+  left: calc(var(--spatiere-laterala) / 2);
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--culoare-principala);
+  border: 5px solid var(--culoare-border);
+  opacity: 0.5;
+  transition: opacity 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: translateX(-50%);
+}
+
+#link-top:hover {
+  opacity: 1;
+  background: var(--culoare-highlight);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#triunghi {
+  display: inline-block;
+  color: var(--culoare-border);
+  font-size: 1.5rem;
+  line-height: 2.8rem;
+  transform: translateY(-5%);
+  transition: color 0.3s;
+}
+
+#link-top:hover #triunghi {
+  color: white;
+}
+
+/* Tooltip pentru link-top */
+#link-top a:hover::after {
+  content: "Înapoi sus";
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 10px;
+  background-color: var(--culoare-highlight);
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  white-space: wrap;
+  z-index: 1001;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+     7. TABELE
+     ========================================================================== */
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.tabel-produse {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.5rem;
+}
+
+.tabel-produse th,
+.tabel-produse td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid var(--culoare-border);
+}
+
+/* Bordere alternate */
+.tabel-produse tr:nth-child(odd) td {
+  border-color: var(--culoare-highlight);
+}
+
+.tabel-produse tr:nth-child(even) td {
+  border-color: var(--culoare-secundara);
+}
+
+/* Grosimi diferite pentru borduri */
+.tabel-produse thead th {
+  border-width: 2px;
+  border-color: var(--culoare-secundara);
+  background-color: var(--culoare-secundara);
+  color: white;
+}
+
+.tabel-produse tbody td {
+  border-width: 1px;
+}
+
+.tabel-produse tfoot td {
+  border-width: 3px;
+  border-color: var(--culoare-secundara);
+  background-color: var(--culoare-principala);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Efect hover cu box-shadow */
+.tabel-produse tbody tr:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Caption pentru tabel */
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-style: italic;
+  color: var(--culoare-text);
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Fundal alternant pentru rânduri */
+.tabel-produse tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Stilizare pentru celule cu rowspan */
+td[rowspan] {
+  vertical-align: middle;
+  background-color: rgba(255, 76, 76, 0.1);
+}
+
+/* ==========================================================================
+     8. IMAGINI & MEDIA
+     ========================================================================== */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--culoare-border);
+  border-radius: 5px;
+}
+
+figure {
+  margin: 0 0 1rem 0;
+}
+
+figcaption {
+  font-style: italic;
+  text-align: center;
+  font-size: 0.9em;
+  padding: 1%;
+}
+
+/* Container iframe și video */
+.container-iframe {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-iframe>iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border: 4px solid var(--culoare-secundara);
+  display: block;
+  margin-bottom: 0;
+  order: 1;
+}
+
+/* Taburi iframe   */
+.taburi-iframe {
+  display: flex;
+  width: 50%;
+  align-self: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2px;
+  order: 2;
+}
+
+.taburi-iframe>a {
+  flex: 1;
+  padding: 10px 8px;
+  text-align: center;
+  background: var(--culoare-principala);
+  color: var(--culoare-secundara);
+  text-decoration: none;
+  border: 2px solid var(--culoare-secundara);
+  border-top: none;
+  border-radius: 0 0 25px 25px;
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: normal;
+  height: auto;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taburi-iframe>a:hover {
+  background: var(--culoare-highlight);
+  color: white;
+}
+
+/* ==========================================================================
+     9. SECȚIUNI & ARTICOLE
+     ========================================================================== */
+section {
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+     10. RESPONSIVE DESIGN
+     ========================================================================== */
+/* Ecran mediu */
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 14px;
+  }
+
+  :root {
+    --spatiere-laterala: 3%;
+    --padding-zone: 2.5%;
+  }
+
+  .container {
+    grid-template-areas:
+      "header header header header"
+      "zona1 zona1 zona1 zona1"
+      "zona8 zona8 zona8 zona8"
+      "zona3 zona3 zona2 zona2"
+      "zona4 zona4 zona4 zona4"
+      "zona5 zona5 zona6 zona6"
+      "zona7 zona7 zona7 zona7"
+      "footer footer footer footer";
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  #zona2 {
+    grid-column: span 2;
+  }
+
+  #zona3 {
+    grid-column: span 2;
+  }
+
+  #zona4 {
+    grid-column: span 4;
+  }
+
+  #zona5,
+  #zona6 {
+    grid-column: span 2;
+  }
+
+  #zona7 {
+    grid-column: span 4;
+  }
+
+  .taburi-iframe {
+    width: 100%;
+  }
+
+  .taburi-iframe>a {
+    font-size: 0.8em;
+    padding: 8px 4px;
+  }
+}
+
+/* Ecran mic (mobil) */
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 10px;
+  }
+
+  :root {
+    --spatiere-laterala: 2%;
+    --padding-zone: 2%;
+  }
+
+  .container {
+    display: block;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  /* Adăugăm spațiere verticală între zone pe mobil */
+  #zona1,
+  #zona2,
+  #zona3,
+  #zona4,
+  #zona5,
+  #zona6,
+  #zona7,
+  #zona8,
+  header,
+  footer {
+    margin-bottom: 10px;
+  }
+
+  /* Dezactivarea animațiilor pe ecran mic */
+  .animatie {
+    display: none;
+  }
+}
