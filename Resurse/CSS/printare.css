@@ -1,0 +1,89 @@
+@media print {
+    header h1 {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        border: 2px dotted black;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    img, video, iframe, .container-iframe, .container-imagini, figure, figcaption {
+        display: none !important;
+    }
+
+    #link-top {
+        display: none !important;
+    }
+
+    .container {
+        display: block !important;
+    }
+    
+    section {
+        display: block !important;
+        page-break-inside: avoid;
+        margin-bottom: 15px;
+    }
+
+    a {
+        text-decoration: none !important;
+        color: black !important;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0 auto;
+        font-size: 2.5em;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+    h1::after {
+        content: "";
+        display: block;
+        page-break-after: always;
+    }
+    
+    footer {
+        page-break-before: always;
+    }
+
+    @page {
+        margin: 2.5cm 0.5cm 0.5cm 2.5cm;
+        size: auto;
+        
+        @top-center {
+            content: "Gugiu Tudor";
+            width: 100px;
+            height: 2cm;
+            border: double;
+            opacity: 0.65;
+        }
+    }
+
+    .meniu-principal, 
+    #zona3, #zona4, #zona5, #zona6, #zona7 {
+        display: none !important;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: left;
+    }
+
+    footer::after {
+        content: "Acesta este un proiect școlar!";
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        font-style: italic;
+    }
+}
