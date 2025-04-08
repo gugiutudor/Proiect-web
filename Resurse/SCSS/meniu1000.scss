@@ -1,0 +1,84 @@
+@media screen and (max-width: 1000px) {
+  $numar-submeniuri: 5;
+  $culoare-text-meniu: white;
+  $culoare-highlight: var(--culoare-highlight);
+  $culoare-secundara: var(--culoare-secundara);
+  $culoare-border-efect: var(--culoare-principala);
+  $culoare-bg-submeniu: var(--culoare-secundara);
+  $timp-tranzitie: 0.3s;
+  $latime-subliniere: 2px;
+  $z-index-submeniu: 100;
+  $raza-border: 5px;
+
+  @mixin tranzitie($proprietati: all, $durata: $timp-tranzitie, $timing: ease) {
+    transition: $proprietati $durata $timing;
+  }
+
+  @mixin transformare-origine($origine) {
+    transform-origin: $origine;
+  }
+
+  @mixin box-shadow-intern($culoare: rgba(255, 255, 255, 0.6)) {
+    box-shadow: inset 0 0 10px $culoare;
+  }
+
+  .meniu-principal {
+    margin-top: 15px;
+    
+    ul {
+      justify-content: center;
+      flex-wrap: wrap;
+      
+      li {
+        > a {
+          padding: 10px 15px;
+          font-size: 0.95em;
+        }
+        
+        ul {
+          min-width: 180px;
+          
+          li a {
+            padding: 8px 12px;
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+
+  .meniu-principal > ul > li:first-child > a {
+    span:not(.fa-solid) {
+      display: none;
+    }
+    
+    .fa-solid {
+      font-size: 1.2em;
+    }
+    
+    padding: 10px 15px;
+  }
+  
+  .meniu-principal .fa-solid, 
+  .meniu-principal .fas {
+    margin-right: 5px;
+  }
+
+  @for $i from 1 through $numar-submeniuri {
+    .meniu-principal > ul > li:nth-child(#{$i}) {
+      > a::before {
+        transition-delay: $i * 0.05s;
+      }
+      
+      > ul {
+        transition-delay: $i * 0.03s;
+        
+        @for $j from 1 through 5 {
+          > li:nth-child(#{$j}) > a::after {
+            transition-delay: $j * 0.05s;
+          }
+        }
+      }
+    }
+  }
+}

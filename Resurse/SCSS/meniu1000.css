@@ -1,0 +1,141 @@
+/* Stiluri pentru ecrane medii (max-width: 1000px) */
+@media screen and (max-width: 1000px) {
+  .meniu-principal {
+    margin-top: 15px;
+  }
+  .meniu-principal ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .meniu-principal ul li > a {
+    padding: 10px 15px;
+    font-size: 0.95em;
+  }
+  .meniu-principal ul li ul {
+    min-width: 180px;
+  }
+  .meniu-principal ul li ul li a {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+  .meniu-principal > ul > li:first-child > a {
+    padding: 10px 15px;
+  }
+  .meniu-principal > ul > li:first-child > a span:not(.fa-solid) {
+    display: none;
+  }
+  .meniu-principal > ul > li:first-child > a .fa-solid {
+    font-size: 1.2em;
+  }
+  .meniu-principal .fa-solid,
+  .meniu-principal .fas {
+    margin-right: 5px;
+  }
+  .meniu-principal > ul > li:nth-child(1) > a::before {
+    transition-delay: 0.05s;
+  }
+  .meniu-principal > ul > li:nth-child(1) > ul {
+    transition-delay: 0.03s;
+  }
+  .meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(1) > a::after {
+    transition-delay: 0.05s;
+  }
+  .meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(2) > a::after {
+    transition-delay: 0.1s;
+  }
+  .meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(3) > a::after {
+    transition-delay: 0.15s;
+  }
+  .meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(4) > a::after {
+    transition-delay: 0.2s;
+  }
+  .meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(5) > a::after {
+    transition-delay: 0.25s;
+  }
+  .meniu-principal > ul > li:nth-child(2) > a::before {
+    transition-delay: 0.1s;
+  }
+  .meniu-principal > ul > li:nth-child(2) > ul {
+    transition-delay: 0.06s;
+  }
+  .meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(1) > a::after {
+    transition-delay: 0.05s;
+  }
+  .meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(2) > a::after {
+    transition-delay: 0.1s;
+  }
+  .meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(3) > a::after {
+    transition-delay: 0.15s;
+  }
+  .meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(4) > a::after {
+    transition-delay: 0.2s;
+  }
+  .meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(5) > a::after {
+    transition-delay: 0.25s;
+  }
+  .meniu-principal > ul > li:nth-child(3) > a::before {
+    transition-delay: 0.15s;
+  }
+  .meniu-principal > ul > li:nth-child(3) > ul {
+    transition-delay: 0.09s;
+  }
+  .meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(1) > a::after {
+    transition-delay: 0.05s;
+  }
+  .meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(2) > a::after {
+    transition-delay: 0.1s;
+  }
+  .meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(3) > a::after {
+    transition-delay: 0.15s;
+  }
+  .meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(4) > a::after {
+    transition-delay: 0.2s;
+  }
+  .meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(5) > a::after {
+    transition-delay: 0.25s;
+  }
+  .meniu-principal > ul > li:nth-child(4) > a::before {
+    transition-delay: 0.2s;
+  }
+  .meniu-principal > ul > li:nth-child(4) > ul {
+    transition-delay: 0.12s;
+  }
+  .meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(1) > a::after {
+    transition-delay: 0.05s;
+  }
+  .meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(2) > a::after {
+    transition-delay: 0.1s;
+  }
+  .meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(3) > a::after {
+    transition-delay: 0.15s;
+  }
+  .meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(4) > a::after {
+    transition-delay: 0.2s;
+  }
+  .meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(5) > a::after {
+    transition-delay: 0.25s;
+  }
+  .meniu-principal > ul > li:nth-child(5) > a::before {
+    transition-delay: 0.25s;
+  }
+  .meniu-principal > ul > li:nth-child(5) > ul {
+    transition-delay: 0.15s;
+  }
+  .meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(1) > a::after {
+    transition-delay: 0.05s;
+  }
+  .meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(2) > a::after {
+    transition-delay: 0.1s;
+  }
+  .meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(3) > a::after {
+    transition-delay: 0.15s;
+  }
+  .meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(4) > a::after {
+    transition-delay: 0.2s;
+  }
+  .meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(5) > a::after {
+    transition-delay: 0.25s;
+  }
+}
+
+/*# sourceMappingURL=meniu1000.css.map */

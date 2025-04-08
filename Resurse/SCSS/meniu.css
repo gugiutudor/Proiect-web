@@ -1,0 +1,214 @@
+.meniu-principal {
+  margin-top: 20px;
+}
+.meniu-principal ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+.meniu-principal ul li {
+  position: relative;
+}
+.meniu-principal ul li a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.meniu-principal ul li > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--culoare-highlight), 0.2);
+  opacity: 1;
+  transform: scaleY(0);
+  transform-origin: center center;
+  transition: transform 0.3s ease-out;
+  border: 1px solid var(--culoare-principala);
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.6);
+  z-index: -1;
+}
+.meniu-principal ul li > a:hover::before {
+  transform: scaleY(1);
+}
+.meniu-principal ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  background-color: var(--culoare-secundara);
+  border-radius: 0 0 8px 8px;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transform-origin: 0 0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+.meniu-principal ul li ul li {
+  width: 100%;
+}
+.meniu-principal ul li ul li a {
+  padding: 10px 15px;
+  text-align: left;
+  color: white;
+  position: relative;
+}
+.meniu-principal ul li ul li a::before {
+  display: none;
+}
+.meniu-principal ul li ul li a::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 3px;
+  width: calc(100% - 30px);
+  height: 2px;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.meniu-principal ul li ul li a:hover::after {
+  opacity: 1;
+  box-shadow: 0 4px 0 white;
+}
+.meniu-principal ul li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.meniu-principal > ul > li:first-child > a {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.meniu-principal > ul > li:first-child > a::before {
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+.meniu-principal > ul > li:nth-child(1) > a::before {
+  transition-delay: 0.05s;
+}
+.meniu-principal > ul > li:nth-child(1) > ul {
+  transition-delay: 0.03s;
+}
+.meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(1) > a::after {
+  transition-delay: 0.05s;
+}
+.meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(2) > a::after {
+  transition-delay: 0.1s;
+}
+.meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(3) > a::after {
+  transition-delay: 0.15s;
+}
+.meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(4) > a::after {
+  transition-delay: 0.2s;
+}
+.meniu-principal > ul > li:nth-child(1) > ul > li:nth-child(5) > a::after {
+  transition-delay: 0.25s;
+}
+
+.meniu-principal > ul > li:nth-child(2) > a::before {
+  transition-delay: 0.1s;
+}
+.meniu-principal > ul > li:nth-child(2) > ul {
+  transition-delay: 0.06s;
+}
+.meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(1) > a::after {
+  transition-delay: 0.05s;
+}
+.meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(2) > a::after {
+  transition-delay: 0.1s;
+}
+.meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(3) > a::after {
+  transition-delay: 0.15s;
+}
+.meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(4) > a::after {
+  transition-delay: 0.2s;
+}
+.meniu-principal > ul > li:nth-child(2) > ul > li:nth-child(5) > a::after {
+  transition-delay: 0.25s;
+}
+
+.meniu-principal > ul > li:nth-child(3) > a::before {
+  transition-delay: 0.15s;
+}
+.meniu-principal > ul > li:nth-child(3) > ul {
+  transition-delay: 0.09s;
+}
+.meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(1) > a::after {
+  transition-delay: 0.05s;
+}
+.meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(2) > a::after {
+  transition-delay: 0.1s;
+}
+.meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(3) > a::after {
+  transition-delay: 0.15s;
+}
+.meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(4) > a::after {
+  transition-delay: 0.2s;
+}
+.meniu-principal > ul > li:nth-child(3) > ul > li:nth-child(5) > a::after {
+  transition-delay: 0.25s;
+}
+
+.meniu-principal > ul > li:nth-child(4) > a::before {
+  transition-delay: 0.2s;
+}
+.meniu-principal > ul > li:nth-child(4) > ul {
+  transition-delay: 0.12s;
+}
+.meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(1) > a::after {
+  transition-delay: 0.05s;
+}
+.meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(2) > a::after {
+  transition-delay: 0.1s;
+}
+.meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(3) > a::after {
+  transition-delay: 0.15s;
+}
+.meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(4) > a::after {
+  transition-delay: 0.2s;
+}
+.meniu-principal > ul > li:nth-child(4) > ul > li:nth-child(5) > a::after {
+  transition-delay: 0.25s;
+}
+
+.meniu-principal > ul > li:nth-child(5) > a::before {
+  transition-delay: 0.25s;
+}
+.meniu-principal > ul > li:nth-child(5) > ul {
+  transition-delay: 0.15s;
+}
+.meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(1) > a::after {
+  transition-delay: 0.05s;
+}
+.meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(2) > a::after {
+  transition-delay: 0.1s;
+}
+.meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(3) > a::after {
+  transition-delay: 0.15s;
+}
+.meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(4) > a::after {
+  transition-delay: 0.2s;
+}
+.meniu-principal > ul > li:nth-child(5) > ul > li:nth-child(5) > a::after {
+  transition-delay: 0.25s;
+}
+
+/*# sourceMappingURL=meniu.css.map */
